@@ -10,9 +10,9 @@ const newnewspaperSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
-    Image: {
+    date: {
       type: String,
-      required: false,
+      required: true,
     },
   },
   {
