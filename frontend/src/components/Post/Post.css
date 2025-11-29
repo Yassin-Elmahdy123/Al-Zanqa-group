@@ -1,0 +1,72 @@
+:root{
+    --bg-primary: #ffffff;
+    --bg-secondary: #1e1e1e;
+    --text-primary: #111827;
+    --text-secondary: #6b7280;
+    --accent-color: #3b82f6;
+    --border-color: #e5e7eb;
+    --orange: #d5a03e;
+    --red: #ad2e2e;
+}
+
+[data-theme='dark'] {
+    --bg-primary: #121212;
+    --bg-secondary: #f3f4f6;
+    --text-primary: #f9fafb;
+    --text-secondary: #9ca3af;
+    --accent-color: #60a5fa;
+    --border-color: #374151;
+    --orange: #d5a03e;
+    --red: #ad2e2e;
+}
+
+.Border_div{
+    border: 2px solid var(--bg-primary);
+    border-radius: 15px;
+    padding: 5px;
+    margin: auto;
+    width: 300px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--bg-primary);
+}
+
+.Border_div>h1{
+    font-size: 24px;
+    margin: 5px;
+    color: var(--bg-secondary);
+}
+
+.Border_div>img{
+    width: 250px;
+    height: 170px;
+    background-color: var(--bg-secondary);
+    border-radius: 10px;
+}
+
+.Buttons_div{
+    display: flex;
+    justify-content: start;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.Buttons_div>button{
+    width: 30px;
+    height: 30px;
+    border-radius: 7px;
+    border: none;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+#edit{
+    background-color: var(--orange);
+}
+
+#delete{
+    background-color: var(--red);
+    
+}
