@@ -10,7 +10,6 @@ const getNewspapers = async (req, res) => {
     res.status(500).json({ sucsess: false, massage: "server Error" });
   }
 };
-
 const createNewspaper = async (req, res) => {
   const newspaper = req.body;
 
@@ -30,7 +29,6 @@ const createNewspaper = async (req, res) => {
     res.status(500).json({ success: false, message: "Server Error" });
   }
 };
-
 const updateNewspaper = async (req, res) => {
   const { id } = req.params;
   const newspaper = req.body;
@@ -51,7 +49,6 @@ const updateNewspaper = async (req, res) => {
     res.status(500).json({ success: false, message: "Server Error" });
   }
 };
-
 const deleteNewspaper = async (req, res) => {
   const { id } = req.params;
 

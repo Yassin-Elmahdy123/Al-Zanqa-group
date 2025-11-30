@@ -1,0 +1,59 @@
+$bg-primary: #ffffff;
+$bg-secondary: #1e1e1e;
+$text-primary: #111827;
+$text-secondary: #6b7280;
+$accent-color: #3b82f6;
+$border-color: #e5e7eb;
+$orange: #d5a03e;
+$red: #ad2e2e;
+
+.Border_div{
+    border: 2px solid $accent-color;
+    border-radius: 15px;
+    padding: 5px;
+    margin: auto;
+    width: 300px;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $bg-primary;
+}
+
+.Border_div>h1{
+    font-size: 24px;
+    margin: 5px;
+    color: $bg-secondary;
+}
+
+.Border_div>img{
+    width: 250px;
+    height: 200px;
+    background-color: $bg-secondary;
+    border-radius: 10px;
+}
+
+.Buttons_div{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.Buttons_div>button{
+    width: 30px;
+    height: 30px;
+    border-radius: 7px;
+    border: none;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+#edit{
+    background-color: $orange;
+}
+
+#delete{
+    background-color: $red;
+    
+}

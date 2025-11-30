@@ -1,12 +1,12 @@
+import { Route, Routes } from 'react-router-dom'
+import HomePage from './pages/Home/HomePage.jsx'
 import PublishPage from './pages/PublishPage/PublishPage.jsx'
-import { LoginSignup } from './Components/LoginSignup/LoginSignup'
-
 
 function App() {
 
   return (
     <>
-      <LoginSignup/>
+      <PublishPage/>
     </>
   )
 }
