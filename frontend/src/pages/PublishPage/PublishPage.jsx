@@ -1,7 +1,6 @@
 import React from 'react'
-import "./PublishPage.css"
-import Navbar from '../../components/Navbar/Navbar'
 import Post from '../../components/Post/Post'
+import "./PublishPage.scss"
 
 const PublishPage = () => {
   return (
