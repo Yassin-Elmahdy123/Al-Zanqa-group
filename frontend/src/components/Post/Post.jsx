@@ -1,11 +1,7 @@
 import React from 'react'
-import "./Post.scss"
-import { MdDelete } from "react-icons/md";
-import { MdEdit } from "react-icons/md";
-import news from '../../../public/newspaper 1.jpg';
-
-
-const Post = () => {
+import "./Post.css"
+import photo from "../../assets/react.svg"
+const Publish = () => {
   return (
     <div className='Border_div'>
       <h1>Paper 1</h1>

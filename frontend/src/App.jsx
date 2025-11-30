@@ -1,17 +1,18 @@
 import { Route, Routes } from 'react-router-dom'
 import HomePage from './pages/Home/HomePage.jsx'
 import PublishPage from './pages/PublishPage/PublishPage.jsx'
-import CreatePage from './pages/CreatePage/CreatePage.jsx'
+
+import "./App.scss"
+
+import Navbar from "./components/Navbar/Navbar.jsx";
+import Cart from "./components/Cart/Cart.jsx"
+import Home from "./components/Home/Home.jsx";
 
 function App() {
 
   return (
     <>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/publish" element={<PublishPage />} />
-        <Route path="/create" element={<CreatePage />} />
-      </Routes>
+      <PublishPage/>
     </>
   )
 }
