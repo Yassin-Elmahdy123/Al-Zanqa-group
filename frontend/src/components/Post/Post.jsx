@@ -1,6 +1,5 @@
 import React from 'react'
-import "./Post.css"
-import photo from "../../assets/react.svg"
+import "./Post.css"git add .
 const Publish = () => {
   return (
     <div className='Border_div'>
