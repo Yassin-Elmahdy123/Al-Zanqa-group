@@ -1,0 +1,30 @@
+{
+  "name": "al-zanqa-group",
+  "version": "1.0.0",
+  "description": "The repository for the final project of the web dev track. WE ARE STUCK!!!!",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yassin-Elmahdy123/Al-Zanqa-group.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Yassin-Elmahdy123/Al-Zanqa-group/issues"
+  },
+  "homepage": "https://github.com/Yassin-Elmahdy123/Al-Zanqa-group#readme",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "mongoose": "^9.0.0",
+    "react-router-dom": "^7.9.6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
