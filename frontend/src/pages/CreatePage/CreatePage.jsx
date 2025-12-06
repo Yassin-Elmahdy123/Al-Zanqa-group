@@ -1,18 +1,22 @@
 import React from "react";
+import { useState } from "react";
+import { useNewspaperStore } from "../../store/Newspaper.js";
 import "./CreatePage.scss";
 
 const CreatePage = () => {
-  const [ newNewspaper, setNewNewspaper ] = React.useState({
+  const [ newNewspaper, setNewNewspaper ] = useState({
     name: "",
     price: "",
     date: "",
     image: ""
   });
   
-  const {creatNewspaper} = useNewspaperStore()
+  const { createNewspaper } = useNewspaperStore()
   
   const handleCreate = async() => {
     const {success, message} = await createNewspaper(newNewspaper);
+    console.log("Success:", success);
+    console.log("Message:", message);
   }
   
   return (

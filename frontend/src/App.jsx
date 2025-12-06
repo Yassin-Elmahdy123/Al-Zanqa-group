@@ -1,20 +1,26 @@
-import { Route, Routes } from 'react-router-dom'
-import HomePage from './pages/Home/HomePage.jsx'
-import PublishPage from './pages/PublishPage/PublishPage.jsx'
+import HomePage from './pages/Home/HomePage.jsx';
+import PublishPage from './pages/PublishPage/PublishPage.jsx';
+import { LoginSignup } from './pages/LoginSignup/LoginSignup.jsx';
+import CreatePage from './pages/CreatePage/CreatePage.jsx';
+import { Routes, Route } from 'react-router-dom';
 
 import "./App.scss"
-
 import Navbar from "./components/Navbar/Navbar.jsx";
-import Cart from "./components/Cart/Cart.jsx"
-import Home from "./components/Home/Home.jsx";
+import Cart from "./components/Cart/Cart.jsx";
 
 function App() {
-
   return (
-    <>
-      <PublishPage/>
-    </>
-  )
+    <div className="App">
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/create" element={<CreatePage />} />
+        <Route path="/login" element={<LoginSignup />} />
+        <Route path="/publish" element={<PublishPage />} />
+        <Route path="/cart" element={<Cart />} />
+      </Routes>
+    </div>
+  );
 }
 
-export default App
+export default App;

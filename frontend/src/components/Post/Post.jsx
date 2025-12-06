@@ -1,11 +1,11 @@
 import React from 'react'
-import "./Post.css"
+import "./Post.scss"
 import photo from "../../assets/react.svg"
-const Publish = () => {
+const Post = () => {
   return (
     <div className='Border_div'>
       <h1>Paper 1</h1>
-      <img src={news} alt="" />
+      <img src={photo} alt="" />
       <div className='Buttons_div'>
         
         <button id="edit" >
