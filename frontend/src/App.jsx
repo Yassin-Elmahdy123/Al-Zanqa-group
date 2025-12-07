@@ -17,7 +17,7 @@ function App() {
         <Route path="/create" element={<CreatePage />} />
         <Route path="/login" element={<LoginSignup />} />
         <Route path="/publish" element={<PublishPage />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/cart"  exact element={<Cart />} />
       </Routes>
     </div>
   );
