@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useNewspaperStore } from "../../store/Newspaper.js";
 import "./CreatePage.scss";
+import { toast } from "sonner";
 
 const CreatePage = () => {
   const [ newNewspaper, setNewNewspaper ] = useState({
@@ -15,8 +16,17 @@ const CreatePage = () => {
   
   const handleCreate = async() => {
     const {success, message} = await createNewspaper(newNewspaper);
-    console.log("Success:", success);
-    console.log("Message:", message);
+    if (success) {
+      toast.success(message)
+    }else{
+      toast.error(message)
+    }
+    setNewNewspaper({
+      name: "",
+      price: "",  
+      date: "",
+      image: ""
+    });
   }
   
   return (
