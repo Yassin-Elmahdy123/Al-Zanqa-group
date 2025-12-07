@@ -13,9 +13,9 @@ function App() {
     <div className="App">
       <Navbar />
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/home" element={<HomePage />} />
         <Route path="/create" element={<CreatePage />} />
-        <Route path="/login" element={<LoginSignup />} />
+        <Route path="/" element={<LoginSignup />} />
         <Route path="/publish" element={<PublishPage />} />
         <Route path="/cart"  exact element={<Cart />} />
       </Routes>
