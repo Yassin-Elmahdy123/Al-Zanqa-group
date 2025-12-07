@@ -1,6 +1,9 @@
 import React from 'react'
 import "./Post.scss"
 import photo from "../../assets/react.svg"
+import { MdEdit, MdDelete, MdClose } from "react-icons/md";
+
+
 const Post = () => {
   return (
     <div className='Border_div'>
