@@ -5,8 +5,6 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { Toaster } from "sonner";
 import { createRoot } from 'react-dom/client'
-import { StrictMode } from 'react'
-import { BrowserRouter } from 'react-router-dom'
 import { AuthContextProvider } from './context/AuthContext';
 import { configureStore } from "@reduxjs/toolkit";
 import  { Provider } from "react-redux";
@@ -21,12 +19,13 @@ const store = configureStore({
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <AuthContextProvider />
-    <BrowserRouter>
-        <Provider store={store}>
+    <Provider store={store}>
+      <AuthContextProvider>
+        <BrowserRouter>
+            <Toaster richColors position="top-right" />
             <App />
-        </Provider>
-        <Toaster richColors position="top-right" />
-    </BrowserRouter>
+        </BrowserRouter>
+      </AuthContextProvider>
+    </Provider>
   </StrictMode>,
 );
