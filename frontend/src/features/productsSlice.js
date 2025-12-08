@@ -1,37 +1,36 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from "axios"
 
 const initialState = {
-    cartItems: [],
-    cartTotalQuantity: 0,
-    cartTotalAmount: 0,
+    items: [],
+    status: null,
 };
 
-const cartSlice = createSlice({
-    name: "cart",
+export const productsFetch = createAsyncThunk(
+    "products/productsFetch",
+    async() => {
+        const response = await axios.get("http://localhost:5000/all-news")
+        return response?.data;
+    }
+)
+
+const productsSlice = createSlice({
+    name: 'products',
     initialState,
-    reducers: {
-        addToCart(state, action) {
-            const item = action.payload;
-
-            const existing = state.cartItems.find(
-                (cartItem) => cartItem.id === item.id
-            );
-
-            if (existing) {
-                existing.cartQuantity += 1;
-            } else {
-                state.cartItems.push({ ...item, cartQuantity: 1 });
-            }
-
-            state.cartTotalQuantity += 1;
-        },
-
-        removeFromCart(state, action) {
-            const id = action.payload;
-            state.cartItems = state.cartItems.filter((i) => i.id !== id);
-        },
-    },
+    reducers: {},
+    extraReducers: (builder) => {
+        builder
+            .addCase(productsFetch.pending, (state, action) => {
+                state.status = "pending";
+            })
+            .addCase(productsFetch.fulfilled, (state, action) => {
+                state.status = "success";
+                state.items = action.payload;
+            })
+            .addCase(productsFetch.rejected, (state, action) => {
+                state.status = "rejected";
+            });
+    }
 });
 
-export const { addToCart, removeFromCart } = cartSlice.actions;
-export default cartSlice.reducer;
+export default productsSlice.reducer;
