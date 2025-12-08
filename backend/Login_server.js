@@ -12,8 +12,8 @@ const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
 
-app.use("/api/newspapers", newspaperRoutes);
-app.use("/api/users", userRoutes);
+app.use("/api/products/newspapers", newspaperRoutes);
+app.use("/api/products/users", userRoutes);
 
 app.listen(PORT, () => {
   connectDB();

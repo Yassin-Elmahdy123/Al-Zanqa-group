@@ -1,7 +1,7 @@
-import React from "react";
 import { useState } from "react";
 import { useNewspaperStore } from "../../store/Newspaper.js";
 import { toast } from "sonner";
+import "./Create.scss";
 
 const CreatePage = () => {
   const [ newNewspaper, setNewNewspaper ] = useState({
@@ -66,7 +66,7 @@ const CreatePage = () => {
         />
         
         <button onClick={handleCreate}>
-          jlfk
+          Create
         </button>
       </div>
     </>

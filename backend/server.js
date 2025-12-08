@@ -23,8 +23,8 @@ app.use(cors({
 
 app.use(express.json());
 
-app.use("/api/newspapers", newspaperRoutes);
-app.use("/api/user", userRoutes);
+app.use("/api/products/newspapers", newspaperRoutes);
+app.use("/api/products/users", userRoutes);
 
 app.listen(PORT, () => {
   connectDB();

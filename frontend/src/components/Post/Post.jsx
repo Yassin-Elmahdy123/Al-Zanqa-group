@@ -1,31 +1,44 @@
 import React from "react";
-import { MdEdit, MdDelete, MdClose } from "react-icons/md";
+import { MdEdit, MdDelete } from "react-icons/md";
 import { useNewspaperStore } from "../../store/Newspaper.js";
 import { toast } from "sonner";
+import "./Post.scss";
 
 const Post = ({ newspaper }) => {
   const { deleteNewspaper } = useNewspaperStore();
 
   const handleDelete = async (nid) => {
-    const { success, message } = await deleteNewspaper(nid);
-    if (success) {
-      toast.success(message);
-    } else {
-      toast.error(message);
+    try {
+      const { success, message } = await deleteNewspaper(nid);
+
+      if (success) {
+        toast.success(message);
+      } else {
+        toast.error(message || "Something went wrong");
+      }
+    } catch (err) {
+      toast.error("Error deleting item");
+      console.error(err);
     }
   };
 
   return (
     <div className="Border_div">
       <h1>{newspaper.name}</h1>
+
       <img src={newspaper.image} alt={newspaper.name} />
-      <div>{newspaper.price}</div>
+
+      <div className="price">{newspaper.price}</div>
+
       <div className="Buttons_div">
-        <button id="edit">
+        <button className="edit">
           <MdEdit />
         </button>
 
-        <button id="delete" onClick={() => handleDelete(newspaper._id)}>
+        <button
+          className="delete"
+          onClick={() => handleDelete(newspaper._id)}
+        >
           <MdDelete />
         </button>
       </div>

@@ -14,12 +14,16 @@ const newnewspaperSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    image: {
+      type: String,
+      required: true,
+    },
   },
   {
     timestamps: true,
   }
 );
 
-const Newnewspaper = mongoose.model("Newspaper", newnewspaperSchema);
+const Newspaper = mongoose.model("Newspaper", newspaperSchema);
 
 module.exports = Newnewspaper;
