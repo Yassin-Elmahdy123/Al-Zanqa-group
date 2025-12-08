@@ -1,6 +1,7 @@
 import HomePage from './pages/Home/HomePage.jsx';
 import PublishPage from './pages/PublishPage/PublishPage.jsx';
-import { LoginSignup } from './pages/LoginSignup/LoginSignup.jsx';
+import  Login from './pages/LoginSignup/Signup.jsx';
+import  Signup from './pages/LoginSignup/Login.jsx';
 import CreatePage from './pages/CreatePage/CreatePage.jsx';
 import { Routes, Route, Navigate} from 'react-router-dom';
 
@@ -15,7 +16,8 @@ function App() {
       <Routes>
           <Route path="/home" element={<HomePage />} />
           <Route path="/create" element={<CreatePage />} />
-          <Route path="/" element={<LoginSignup />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
           <Route path="/publish" element={<PublishPage />} />
           <Route path="/cart"  exact element={<Cart />} />
           <Route path="/not-found" element={<NotFound />} />

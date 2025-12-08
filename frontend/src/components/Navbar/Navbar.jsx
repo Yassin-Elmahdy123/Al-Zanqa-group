@@ -16,6 +16,8 @@ const Navbar = () => {
       <span className="bag-quantity">3</span>
     </div>
   </Link>
+  <Link to="/login">Login</Link>
+  <Link to="/signup">Signup</Link>
 </nav>
   )
 }
