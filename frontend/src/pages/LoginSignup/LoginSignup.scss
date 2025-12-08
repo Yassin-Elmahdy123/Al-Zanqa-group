@@ -1,0 +1,84 @@
+$primary: #4c6ef5;
+$error: #e03131;
+$bg: #f6f7fb;
+
+.auth-form {
+  width: 100%;
+  max-width: 380px;
+  margin: 40px auto;
+  padding: 30px 35px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+
+  h3 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.6rem;
+    color: $primary;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #333;
+  }
+
+  input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 1.8px solid #ccc;
+    border-radius: 8px;
+    background: $bg;
+    transition: 0.2s ease;
+
+    &:focus {
+      border-color: $primary;
+      box-shadow: 0 0 4px rgba(76, 110, 245, 0.3);
+      outline: none;
+    }
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    background: $primary;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.2s ease;
+    margin-top: 5px;
+
+    &:hover {
+      background: darken($primary, 6%);
+    }
+
+    &:disabled {
+      background: lighten($primary, 15%);
+      cursor: not-allowed;
+    }
+  }
+
+  .error {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 6px;
+    background: rgba($error, 0.08);
+    color: $error;
+    border: 1px solid rgba($error, 0.4);
+    font-size: 0.9rem;
+  }
+}
+
+.signup {
+  @extend .auth-form;
+}
+
+.login {
+  @extend .auth-form;
+}

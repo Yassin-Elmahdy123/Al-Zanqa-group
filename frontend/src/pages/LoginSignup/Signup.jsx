@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import { useSignup } from '../../hooks/useSignup';
+import "../../pages/LoginSignup/LoginSignup.scss";
 
 const Signup = () => {
     const [email, setEmail] = useState('');
