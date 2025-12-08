@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const newnewspaperSchema = new mongoose.Schema(
+const newspaperSchema = new mongoose.Schema(
   {
     name: {
       type: String,
@@ -17,13 +17,12 @@ const newnewspaperSchema = new mongoose.Schema(
     image: {
       type: String,
       required: true,
-    },
+    }
   },
-  {
-    timestamps: true,
-  }
+  { timestamps: true }
 );
 
+// IMPORTANT: use the schema you created
 const Newspaper = mongoose.model("Newspaper", newspaperSchema);
 
-module.exports = Newnewspaper;
+module.exports = Newspaper;

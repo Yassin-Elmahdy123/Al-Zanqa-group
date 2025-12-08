@@ -1,56 +1,94 @@
-// Wrapper for the title + icon
-.headers {
+.publish-page {
+  padding: 30px;
+  min-height: 100vh;
+  background: #f8f9ff;
+}
+
+/* Header -------------------------------------------------- */
+.page-header {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin: 30px 0 20px 0;
-  padding-left: 20px;
+  gap: 16px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e5e7ff;
+  margin-bottom: 25px;
 
   h1 {
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-weight: 700;
+    color: #222;
+  }
+
+  .subtitle {
+    color: #666;
+    font-size: 0.95rem;
   }
 
   .news-icon {
-    font-size: 2.4rem;
+    font-size: 2.6rem;
     color: #5c5cff;
   }
+}
+
+/* Loading -------------------------------------------------- */
+.loading {
+  font-size: 1.1rem;
+  color: #666;
+  padding-top: 10px;
+}
+
+/* Post Grid -------------------------------------------------- */
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+/* Empty State -------------------------------------------------- */
+.empty-state {
+  margin-top: 50px;
+  text-align: center;
 
   h2 {
     font-size: 1.6rem;
-    font-weight: 600;
-    color: #444;
+    font-weight: 700;
+    color: #222;
   }
 
-  .create-link {
-    color: #5c5cff;
+  p {
+    margin-top: 6px;
+    color: #555;
+  }
+
+  .create-btn {
+    margin-top: 16px;
+    padding: 10px 20px;
+    background: #5c5cff;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
     font-weight: 600;
-    margin-top: 10px;
-    display: inline-block;
+    transition: 0.2s ease;
 
     &:hover {
-      text-decoration: underline;
+      background: #4b4bcc;
     }
   }
 }
 
-// THE GRID for all cards
-.post-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  padding: 20px;
-}
-
-/* RESPONSIVE FIXES */
+/* Responsive Breakpoints ------------------------------------ */
 @media (max-width: 992px) {
-  .post-container {
+  .post-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 600px) {
-  .post-container {
+  .post-grid {
     grid-template-columns: 1fr;
+  }
+
+  .publish-page {
+    padding: 20px;
   }
 }

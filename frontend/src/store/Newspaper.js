@@ -19,20 +19,20 @@ export const useNewspaperStore = create((set) => ({
     }
 
     set((state) => ({
-      newspapers: [...state.newspapers, data.newspaper]  // <- MATCHES BACKEND
+      newspapers: [...state.newspapers, data.newspaper]
     }));
 
     return { success: true, message: data.message };
   },
 
-  fetchNewspapers: async () => {
+  // FIXED NAME
+  fetchNewspaper: async () => {
     const res = await fetch("http://localhost:5000/api/products/newspapers");
     const data = await res.json();
 
     set({ newspapers: data.newspapers || [] });
   },
 
-  // FIXED NAME
   deleteNewspaper: async (id) => {
     const res = await fetch(`http://localhost:5000/api/products/newspapers/${id}`, {
       method: "DELETE",
