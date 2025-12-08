@@ -4,10 +4,10 @@ const mongoose = require("mongoose");
 const getNewspapers = async (req, res) => {
   try {
     const newspapers = await Newspaper.find();
-    res.status(200).json({ sucsess: true, data: newspapers });
+    res.status(200).json({ success: true, data: newspapers });
   } catch (error) {
     console.error("Error in fetching newspapers:", error.message);
-    res.status(500).json({ sucsess: false, massage: "server Error" });
+    res.status(500).json({ success: false, massage: "server Error" });
   }
 };
 const createNewspaper = async (req, res) => {

@@ -1,5 +1,7 @@
-const express = require("express");
 const dotenv = require("dotenv");
+dotenv.config();
+
+const express = require("express");
 const connectDB = require("./.config/db.js");
 const cors = require("cors");
 const axios = require("axios");
@@ -7,10 +9,12 @@ const axios = require("axios");
 const newspaperRoutes = require("./routes/newspaper.route.js");
 const userRoutes = require("./routes/user.js");
 
-dotenv.config();
-
 const app = express();
 const PORT = process.env.PORT || 5000;
+
+console.log("LOADED MONGO_URI:", process.env.MONGO_URI);
+console.log("MONGO_URI =>", process.env.MONGO_URI);
+
 app.use(cors({
   origin: "http://localhost:5173",
   methods: ["GET", "POST", "PUT", "DELETE"],
@@ -21,6 +25,7 @@ app.use(express.json());
 
 app.use("/api/newspapers", newspaperRoutes);
 app.use("/api/user", userRoutes);
+
 app.listen(PORT, () => {
   connectDB();
   console.log("Server running on port", PORT);
@@ -65,7 +70,6 @@ app.get("/all-news", (req, res) => {
 
 // top-headlines
 app.options("/top-headlines", cors());
-
 app.get("/top-headlines", (req, res) => {
     let pagesize = parseInt(req.query.pagesize) || 80;
     let page = parseInt(req.query.page) || 1;
