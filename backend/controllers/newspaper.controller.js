@@ -1,7 +1,6 @@
 const Newspaper = require("../models/newspaper.model.js");
 const mongoose = require("mongoose");
 
-// GET ALL
 const getNewspapers = async (req, res) => {
   try {
     const newspapers = await Newspaper.find();
@@ -12,7 +11,7 @@ const getNewspapers = async (req, res) => {
   }
 };
 
-// CREATE
+
 const createNewspaper = async (req, res) => {
   const newspaper = req.body;
 
@@ -38,7 +37,6 @@ const createNewspaper = async (req, res) => {
   }
 };
 
-// UPDATE
 const updateNewspaper = async (req, res) => {
   const { id } = req.params;
 
@@ -60,7 +58,6 @@ const updateNewspaper = async (req, res) => {
   }
 };
 
-// DELETE
 const deleteNewspaper = async (req, res) => {
   const { id } = req.params;
 

@@ -6,48 +6,62 @@ export const useNewspaperStore = create((set) => ({
   setNewspapers: (newspapers) => set({ newspapers }),
 
   createNewspaper: async (newNewspaper) => {
-    const res = await fetch("http://localhost:5000/api/products/newspapers", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newNewspaper)
-    });
+    try {
+      const res = await fetch("http://localhost:5000/api/newspaper", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newNewspaper)
+      });
 
-    const data = await res.json();
-    
-    if (!data.success) {
-      return { success: false, message: data.message };
+      const data = await res.json();
+
+      if (!data.success) {
+        return { success: false, message: data.message };
+      }
+
+      set((state) => ({
+        newspapers: [...state.newspapers, data.newspaper],
+      }));
+
+      return { success: true, message: data.message };
+    } catch (error) {
+      console.error("Error creating newspaper:", error);
+      return { success: false, message: "Failed to connect to server." };
     }
-
-    set((state) => ({
-      newspapers: [...state.newspapers, data.newspaper]
-    }));
-
-    return { success: true, message: data.message };
   },
 
-  // FIXED NAME
   fetchNewspaper: async () => {
-    const res = await fetch("http://localhost:5000/api/products/newspapers");
-    const data = await res.json();
+    try {
+      const res = await fetch("http://localhost:5000/api/newspaper");
+      const data = await res.json();
 
-    set({ newspapers: data.newspapers || [] });
+      set({ newspapers: data.newspapers || [] });
+    } catch (error) {
+      console.error("Error fetching newspapers:", error);
+      set({ newspapers: [] });
+    }
   },
 
   deleteNewspaper: async (id) => {
-    const res = await fetch(`http://localhost:5000/api/products/newspapers/${id}`, {
-      method: "DELETE",
-    });
+    try {
+      const res = await fetch(`http://localhost:5000/api/newspaper/${id}`, {
+        method: "DELETE",
+      });
 
-    const data = await res.json();
+      const data = await res.json();
 
-    if (!data.success) {
-      return { success: false, message: data.message };
+      if (!data.success) {
+        return { success: false, message: data.message };
+      }
+
+      set((state) => ({
+        newspapers: state.newspapers.filter((n) => n._id !== id),
+      }));
+
+      return { success: true, message: data.message };
+    } catch (error) {
+      console.error("Error deleting newspaper:", error);
+      return { success: false, message: "Failed to connect to server." };
     }
-
-    set((state) => ({
-      newspapers: state.newspapers.filter((n) => n._id !== id),
-    }));
-
-    return { success: true, message: data.message };
   },
 }));
