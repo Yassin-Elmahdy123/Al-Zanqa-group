@@ -1,5 +1,4 @@
 import React from "react";
-import "./Post.scss";
 import { MdEdit, MdDelete, MdClose } from "react-icons/md";
 import { useNewspaperStore } from "../../store/Newspaper.js";
 import { toast } from "sonner";
