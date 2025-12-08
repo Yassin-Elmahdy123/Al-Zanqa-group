@@ -7,11 +7,15 @@ import { AuthContextProvider } from './context/AuthContext';
 import { configureStore } from "@reduxjs/toolkit";
 import  { Provider } from "react-redux";
 import productsReducer from "./features/productsSlice.js";
+import { productsApi } from "./features/productsApi.js";
 
 const store = configureStore({
   reducer: {
-      products: productsReducer
+      products: productsReducer,
+      [productsApi.reducerPath]: productsApi.reducer,
   },
+  middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware().concat(productsApi.middleware)
 });
 
 

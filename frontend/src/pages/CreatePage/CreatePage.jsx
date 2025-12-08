@@ -50,16 +50,16 @@ const CreatePage = () => {
         />
         
         <input 
-          placeholder="Image" 
+          placeholder="Image URL"
           type="text" 
-          name="image" 
+          name="image"
           value={newNewspaper.image} 
           onChange={(e) => setNewNewspaper  ({...newNewspaper, image: e.target.value })}
         />
         
         <input 
           placeholder= "Date" 
-          type="text" 
+          type="date"
           name="date" 
           value={newNewspaper.date} 
           onChange={(e) => setNewNewspaper  ({...newNewspaper, date: e.target.value })}

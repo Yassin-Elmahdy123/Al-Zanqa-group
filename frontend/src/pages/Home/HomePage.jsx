@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useGetAllProductsQuery } from "../../features/productsApi.js";
 import "./HomePage.scss";
 
 const HomePage = () => {
