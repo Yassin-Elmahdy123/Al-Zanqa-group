@@ -18,7 +18,7 @@ const Signup = () => {
             <label>Email:</label>
             <input 
             type="email"
-            onChangeCapture={(e) => setEmail(e.target.value)} 
+            onChange={(e) => setEmail(e.target.value)} 
             value={email}
             />
             
