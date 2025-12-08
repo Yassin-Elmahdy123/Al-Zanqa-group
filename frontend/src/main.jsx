@@ -6,14 +6,17 @@ import { Toaster } from "sonner";
 import { createRoot } from 'react-dom/client'
 import { StrictMode } from 'react'
 import { BrowserRouter } from 'react-router-dom'
+import { AuthContextProvider } from './context/AuthContext';
 
 ReactDOM.createRoot(document.getElementById('root')).render(<App />);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <AuthContextProvider>
     <BrowserRouter>
       <App />
       <Toaster richColors position="top-right" />
     </BrowserRouter>
+    </AuthContextProvider>
   </StrictMode>,
 )
