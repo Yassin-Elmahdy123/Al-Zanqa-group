@@ -1,7 +1,7 @@
 import HomePage from './pages/Home/HomePage.jsx';
 import PublishPage from './pages/PublishPage/PublishPage.jsx';
-import  Login from './pages/LoginSignup/Signup.jsx';
-import  Signup from './pages/LoginSignup/Login.jsx';
+import  Login from './pages/LoginSignup/Login.jsx';
+import  Signup from './pages/LoginSignup/Signup.jsx';
 import CreatePage from './pages/CreatePage/CreatePage.jsx';
 import { Routes, Route, Navigate} from 'react-router-dom';
 
