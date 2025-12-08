@@ -24,10 +24,10 @@ app.use(cors({
 app.use(express.json());
 
 app.use("/api/products/newspapers", newspaperRoutes);
-app.use("/api/products/users", userRoutes);
+app.use("/api/user", userRoutes);
 
+connectDB();
 app.listen(PORT, () => {
-  connectDB();
   console.log("Server running on port", PORT);
 });
 const API_KEY = '240992b7cf1348c18e21803ab18fee41';
