@@ -19,9 +19,9 @@ const store = configureStore({
 });
 
 
-ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+ReactDOM.createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <AuthContextProvider>
+    <AuthContextProvider />
     <BrowserRouter>
         <Provider store={store}>
             <App />
@@ -29,4 +29,4 @@ ReactDOM.createRoot(document.getElementById('root')).render(<App />);
         <Toaster richColors position="top-right" />
     </BrowserRouter>
   </StrictMode>,
-)
+);
