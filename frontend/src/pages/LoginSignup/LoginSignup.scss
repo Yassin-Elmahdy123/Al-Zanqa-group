@@ -75,6 +75,48 @@ $bg: #f6f7fb;
   }
 }
 
+@media (max-width: 380px) {
+  .auth-form {
+    padding: 22px 20px;
+    h3 {
+      font-size: 1.4rem;
+    }
+    input, button {
+      padding: 10px;
+    }
+  }
+}
+
+
+@media (min-width: 600px) {
+  .auth-form {
+    max-width: 430px;
+    padding: 35px 40px;
+  }
+}
+
+@media (min-width: 768px) {
+  .auth-form {
+    max-width: 450px;
+    margin-top: 60px;
+    padding: 40px 45px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .auth-form {
+    max-width: 480px;
+    padding: 45px 55px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .auth-form {
+    max-width: 520px;
+    padding: 50px 60px;
+  }
+}
+
 .signup {
   @extend .auth-form;
 }
