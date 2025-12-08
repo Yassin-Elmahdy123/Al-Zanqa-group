@@ -1,6 +1,5 @@
 import React from 'react'
 import Post from '../../components/Post/Post'
-import "./PublishPage.scss"
 import { FaNewspaper } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 

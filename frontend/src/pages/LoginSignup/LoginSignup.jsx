@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import './LoginSignup.scss'
 
 import user_icon from '../../assets/person.png'
 import email_icon from '../../assets/email.png'
